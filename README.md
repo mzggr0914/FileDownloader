@@ -1,5 +1,4 @@
 # FIle Downloader
-https://www.nuget.org/packages/GoogleDriveFileDownloader
 ## Features 
  
 - Download File
