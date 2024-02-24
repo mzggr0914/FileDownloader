@@ -11,10 +11,12 @@
 string url = "link";
 string file_name = @"file_path";
 //google drive
-url = FileDownloader.GetGDriveDirectLink(url);
+url = URLUtils.GetGDriveDirectLink(url);
+//or
+url = URLUtils.GetGDriveDirectLink2(url);
 
 //onedrive
-url = FileDownloader.GetODriveDirectLink(url);
+url = URLUtils.GetGDriveDirectLink(url);
 
 //download
 FileDownloader httpClient = new(url, file_name);
