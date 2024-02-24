@@ -8,18 +8,22 @@
 
 ## Example
 ```csharp
-string url = "link";
-string file_name = @"file_path";
+var url = new URL("FILE URL");
+string URL;
+string filename;
 //google drive
-url = URLUtils.GetGDriveDirectLink(url);
-//or
-url = URLUtils.GetGDriveDirectLink2(url);
-
+URL = url.GetGDriveDirectLink();
+//other way
+URL = url.GetGDriveDirectLink2();
 //onedrive
-url = URLUtils.GetGDriveDirectLink(url);
+URL = url.GetODriveDirectLink();
 
+//google drive file name
+filename = @$"file_path\{url.GetGDriveFileName()}";
+//onedrive file name (manual)
+filename = @$"file_path\test.txt";
 //download
-FileDownloader httpClient = new(url, file_name);
+FileDownloader httpClient = new(URL, filename);
 httpClient.ProgressChanged += (totalFileSize, totalBytesDownloaded, progressPercentage) => Console.WriteLine($"{progressPercentage}%");
 await httpClient.StartDownload();
 ``` 
